@@ -17,7 +17,7 @@ The extension connects to a local daemon over WebSocket (`ws://localhost:19825/e
 
 ## All features
 
-- **Popup UI** (`popup.html` / `popup.js`): status dot (connected/connecting/disconnected), daemon version display, extension version display, copyable context/profile ID, hint text when disconnected.
+- **Popup UI** (`popup.html` / `popup.js`): status dot (connected/connecting/disconnected), daemon version display, extension version display, copyable context/profile ID, hint text when disconnected, Indonesian/English language toggle (saved via `chrome.storage.local`).
 - **Background service worker** (`dist/background.js`, built from source, MV3):
   - WebSocket client to `ws://localhost:19825/ext`, HTTP ping to `http://localhost:19825/ping`.
   - CDP command execution with timeouts (60s default, 2s for connectivity probes) and clear timeout error messages (e.g. detecting a blocking native dialog).

@@ -115,6 +115,25 @@
     }
     .footer a { color: #007aff; text-decoration: none; }
     .footer a:hover { text-decoration: underline; }
+    .lang-toggle {
+      display: flex;
+      flex-shrink: 0;
+      border: 1px solid #d2d2d7;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .lang-toggle button {
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 6px;
+      border: none;
+      background: transparent;
+      color: #86868b;
+      cursor: pointer;
+    }
+    .lang-toggle button + button { border-left: 1px solid #d2d2d7; }
+    .lang-toggle button[aria-pressed="true"] { background: #007aff; color: #fff; }
   </style>
 </head>
 <body>
@@ -122,6 +141,10 @@
     <img src="icons/icon-48.png" alt="OpenCLI">
     <h1>OpenCLI</h1>
     <span class="version-tag" id="extVersion"></span>
+    <span class="lang-toggle" id="langToggle">
+      <button type="button" id="langId" data-lang="id">ID</button>
+      <button type="button" id="langEn" data-lang="en">EN</button>
+    </span>
   </div>
   <div class="card disconnected" id="card">
     <div class="status-row">
@@ -134,12 +157,10 @@
       <span class="profile-id" id="contextId"></span>
       <button type="button" class="copy-btn" id="copyBtn" title="Copy contextId">Copy</button>
     </div>
-    <div class="hint" id="hint" style="display: none;">
-      The extension connects automatically when you run any <code>opencli</code> command.
-    </div>
+    <div class="hint" id="hint" style="display: none;"></div>
   </div>
   <div class="footer">
-    <a href="https://github.com/jackwener/opencli" target="_blank">Documentation</a>
+    <a href="https://github.com/jackwener/opencli" target="_blank" id="docLink">Documentation</a>
   </div>
   <script src="popup.js"></script>
 </body>
