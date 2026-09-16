@@ -67,7 +67,7 @@ Ekstensi ini terhubung ke daemon lokal melalui WebSocket (`ws://localhost:19825/
 
 ## Semua fitur
 
-- **UI Popup** (`popup.html` / `popup.js`): indikator status (terhubung/menghubungkan/terputus), tampilan versi daemon, tampilan versi ekstensi, ID context/profile yang bisa disalin, teks bantuan saat terputus.
+- **UI Popup** (`popup.html` / `popup.js`): indikator status (terhubung/menghubungkan/terputus), tampilan versi daemon, tampilan versi ekstensi, ID context/profile yang bisa disalin, teks bantuan saat terputus, toggle bahasa Indonesia/Inggris (tersimpan lewat `chrome.storage.local`).
 - **Background service worker** (`dist/background.js`, hasil build dari source, MV3):
   - Klien WebSocket ke `ws://localhost:19825/ext`, ping HTTP ke `http://localhost:19825/ping`.
   - Eksekusi perintah CDP dengan timeout (default 60 detik, 2 detik untuk probe konektivitas) dan pesan error timeout yang jelas (mis. mendeteksi dialog native yang memblokir).
